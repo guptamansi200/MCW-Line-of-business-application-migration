@@ -36,10 +36,11 @@ In this task you will create a new Azure Storage Account that will be used by Az
 
 In this task you created a new Azure Storage Account that will be used by Azure Migrate: Migration and modernization.
 
-## Task 2: Create a Virtual Network
 
-In this task you will create a new virtual network that will be used by your migrated virtual machines when they are migrated to Azure. (Azure Migrate will only create the VMs, their network interfaces, and their disks; all other resources must be staged in advance.)
 
+<<<<<<< HEAD
+## Task 2: Register the Hyper-V Host with Azure Migrate: Server Migration
+=======
 > **Note:** Azure provides several options for deploying the right network configuration. After the lab, if you’d like to better understand your networking options, see the [Network decision guide](<https://docs.microsoft.com/azure/cloud-adoption-framework/decision-guides/software-defined-network/>), which builds on the Cloud Adoption Framework’s Azure landing zones.
 
 You will also configure a private endpoint in this network to allow private, secure access to the SQL Database.
@@ -178,6 +179,7 @@ You will also configure a private endpoint in this network to allow private, sec
 In this task you created a new virtual network that will be used by your virtual machines when they are migrated to Azure. You also provisioned a Azure Gateway WAF firewall
 
 ## Task 3: Register the Hyper-V Host with Azure Migrate: Migration and modernization
+>>>>>>> ad6c7040b1d62e8324c9d9008327a9dcaaeb04b2
 
 In this task, you will register your Hyper-V host with the Azure Migrate: Migration and modernization service. This service uses Azure Site Recovery as the underlying migration engine. As part of the registration process, you will deploy the Azure Site Recovery Provider on your Hyper-V host.
 
@@ -237,11 +239,11 @@ In this task, you will register your Hyper-V host with the Azure Migrate: Migrat
 
     ![Screenshot of the 'Azure Migrate - Servers' blade showing 6 discovered servers under 'Azure Migrate: Server Migration'.](images/Exercise3/discover-8.png "Discovered servers")
 
-### Task 3 summary
+### Task 2 summary
 
 In this task you registered your Hyper-V host with the Azure Migrate Migration service.
 
-## Task 4: Enable Replication from Hyper-V to Azure Migrate
+## Task 3: Enable Replication from Hyper-V to Azure Migrate
 
 In this task, you will configure and enable the replication of your on-premises virtual machines from Hyper-V to the Azure Migrate Migration service.
 
@@ -285,11 +287,11 @@ In this task, you will configure and enable the replication of your on-premises 
 
     ![(Update) Screenshot of the 'Azure Migrate: Server Migration - Replicating machines' blade showing the replication status as 'Protected' for all 3 servers.](images/Exercise3/replicate-9a.png "Replication status")
 
-### Task 4 summary
+### Task 3 summary
 
 In this task you enabled replication from the Hyper-V host to Azure Migrate, and configured the replicated VM size in Azure.
 
-## Task 5: Configure static internal IP addresses for each VM
+## Task 4: Configure static internal IP addresses for each VM
 
 In this task you will modify the settings for each replicated VM to use a static private IP address that matches the on-premises IP addresses for that machine.
 
@@ -317,13 +319,17 @@ In this task you will modify the settings for each replicated VM to use a static
  
     - For **smarthotelweb2** use private IP address **192.168.0.5**
   
-### Task 5 summary
+### Task 4 summary
 
 In this task you modified the settings for each replicated VM to use a static private IP address that matches the on-premises IP addresses for that machine
 
 > **Note**: Azure Migrate makes a "best guess" at the VM settings, but you have full control over the settings of migrated items. In this case, setting a static private IP address ensures the virtual machines in Azure retain the same IPs they had on-premises, which avoids having to reconfigure the VMs during migration (for example, by editing web.config files).
 
+<<<<<<< HEAD
+## Task 5: Server migration
+=======
 ## Task 6: Migration and modernization
+>>>>>>> ad6c7040b1d62e8324c9d9008327a9dcaaeb04b2
 
 In this task you will perform a migration of the UbuntuWAF, smarthotelweb1, and smarthotelweb2 machines to Azure.
 
@@ -355,11 +361,11 @@ In this task you will perform a migration of the UbuntuWAF, smarthotelweb1, and 
 
    ![(Update) Screenshot showing resources created by the test failover (VMs, disks, and network interfaces).](images/Exercise3/migrate-6a.png "Migrated resources")
 
-### Task 6 summary
+### Task 5 summary
 
 In this task you used Azure Migrate to create Azure VMs using the settings you have configured, and the data replicated from the Hyper-V machines. This migrated your on-premises VMs to Azure.
 
-## Task 7: Configure the Application gateway and test the SmartHotel application
+## Task 6: Configure the Application gateway and test the SmartHotel application
 
 In this task, we will configure the WAF to point to frontend webserver.
 
@@ -380,7 +386,7 @@ In this task, we will configure the WAF to point to frontend webserver.
 
     ![Screenshot showing the SmartHotel application.](images/Exercise3/smarthotel.png "Migrated SmartHotel application")
 
-### Task 7 summary
+### Task 6 summary
 
 In this task, you assigned a public IP address to the Application gateway and verified that the SmartHotel application is now working in Azure.
 
